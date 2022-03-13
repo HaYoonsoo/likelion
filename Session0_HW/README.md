@@ -14,7 +14,7 @@
 ## 무엇을 좋아하는가
 + 곱창 -> 자주 가던 곳이 맛이 없어져서 안찾아감
 + 보쌈: 안암한상차림
-![map](https://github.com/HaYoonsoo/likelion/tree/master/Session0_HW/Map.png)
+![map](Map.png)
 
 ## 더 할말이 있는가
 ### 할말
