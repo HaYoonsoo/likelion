@@ -1,0 +1,72 @@
+* {
+    margin: 10px auto;
+    font-family: 'Courier New';
+}
+
+body {
+    width: 900px;
+}
+
+header {
+    text-align: center;
+}
+
+nav li{
+    margin: 0;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: orangered;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+}
+
+nav li:hover {
+    background-color: orange;
+}
+
+.card {
+    text-align: center;
+    border-radius: 10px;
+    background-color: purple;
+    color: white;
+
+    padding: 10px 20px;
+    margin: 15px 15px;
+}
+
+.card li{
+    text-align: left;
+}
+
+.card2 {
+    border-radius: 10px;
+    width: 300px;
+    height: 500px;
+    display: inline-block;
+}
+
+.card2:hover {
+    width: 400px;
+}
+
+.card2 li {
+    text-align: left;  
+}
+
+#pizza {
+    background-image: url("./pizza_2.jpg");
+    background-size: cover;
+}
+
+#beer {
+    background-image: url("./beer.jpg");
+    background-size: cover;
+}
+
+footer {
+    text-align: right;
+    
+}

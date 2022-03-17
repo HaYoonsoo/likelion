@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles.css" rel="stylesheet">
+    <title>나는 누구인가</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a href=#who><li>누구인가</li></a>
+                <a href=#todo><li>하고 싶은 것</li></a>
+                <a href=#donate><li>후원문의</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="who" class="card">
+            <h1>누구냐?</h1>
+            <h2>학과</h2>
+            <p>
+                물리학과 19학번 하윤수다!
+            </p>
+            <h2>좋아하는 것</h2>
+            <p>
+                피자와 맥주를 좋아한다!
+            </p>
+            <div id="pizza" class="card2">
+                <h1>피자의 효능</h1>
+                <ul>
+                    <li>장건강에 좋다</li>
+                    <li>피부미용에 좋다</li>
+                    <li>수험생에게 좋다</li>
+                    <li>다이어트에 좋다</li>
+                </ul>
+            </div>
+            <div id="beer" class="card2">
+                <h1>맥주의 효능</h1>
+                <ul>
+                    <li>기억력에 좋다</li>
+                    <li>노화 방지에 좋다</li>
+                    <li>통풍에 좋다</li>
+                    <li>집중력에 좋다</li>
+                </ul>
+            </div>
+        </div>
+        <div id="todo" class="card">
+            <h1>뭐하려고 왔냐?</h1>
+            <ul>
+                <li>내 힘으로 서비스 구축이 가능하도록 공부</li>
+                <ol>
+                    <li>코딩</li>
+                    <li>그 외에도 필요한 많은 지식</li>
+                </ol>
+                <li>뛰어난 사람들을 많이 만나며 자극받기</li>
+                <li>기억에 남을만한 성과를 만들고 나가기</li>
+            </ul>
+        </div>
+        <div id="donate" class="card">
+            <h1>후원 문의</h1> 
+            <form action="#" method="POST">
+                <label for="info1">주민등록번호</label>
+                <input type="text" name="info1" id="info1">
+                -
+                <input type="password" name="info2" id="info2">
+                <br>
+                <label for="info3">계좌번호(-제외)</label>
+                <input type="text" name="info3" id="info3">
+                <br>
+                <label for="info4">통장 비밀번호</label>
+                <input type="password" name="info4" id="info4">
+                <br>
+                <label for="check">제3자 개인정보 제공 동의</label>
+                <input type="checkbox" name="check" id="check">
+                <br>
+                <input type="submit">
+            </form>
+            감사합니다!
+        </div>
+    </main>
+    <footer>
+        <p>
+            열심히 살아야겠다!!
+        </p>
+    </footer>
+</body>
+</html>
