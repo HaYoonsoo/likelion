@@ -1,0 +1,249 @@
+* {
+    font-family: Arial;
+}
+
+.gray {
+    color: gray;
+}
+.bold {
+    font-weight: bold;
+}
+.italic {
+    font-style: italic;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    width: 470px;
+    border: thin red solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.scroll {
+    height: 700px;
+    overflow: auto;
+}
+
+
+/* 휴대폰 상태바 */
+
+.phone_status {
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time {
+    margin-left: 20px;
+}
+
+.phone_icons {
+    margin-right: 10px;
+    display: flex;
+}
+
+.phone_icons img {
+    width: 20px;
+    height: 20px;
+}
+
+/* < likelion_ku 부분 */
+.header {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;;
+    align-items: center;
+}
+
+.header img {
+    width: 25px;
+    height: 25px;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.header_icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bell {
+    margin-right: 30px;
+}
+
+.name {
+    margin-left: 50px;
+}
+
+/* 프로필 */
+.profile {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+/* 프로필 이미지 부분 */
+.upper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.upnum {
+    text-align: center;
+    font-weight: bold;
+}
+
+.upnum span {
+    font-weight: normal;
+    color: gray;
+}
+
+.profile_pic img {
+    weight: 80px;
+    height: 80px;
+    border-radius: 80px;
+}
+/* 프로필 설명 부분 lower */
+.lower {
+    font-size: small;
+}
+
+a {
+    color: navy;
+}
+
+/* 팔로워 */
+.followers {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: small;
+    margin-top: 20px;
+}
+
+.followers img {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    margin-left: 25px;
+    margin-right: 10px;
+}
+/* 팔로잉 버튼 */
+.relation_buttons {
+    margin-top: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rb {
+    border: thin rgb(201, 199, 199) solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; 
+}
+
+.follow, .send_message {
+    width: 160px;
+}
+.follow img {
+    width: 20px;
+    height: 20px;
+}
+.add {
+    width: 40px;
+}
+.add img {
+    width: 25px;
+    height: 25px;
+}
+
+/* 스토리 */
+.stories {
+    margin-top: 15px;
+    margin-left: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: small;
+}
+
+.story {
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.story img {
+    margin: auto auto;
+    width: 60;
+    height: 60px;
+    border-radius: 69px;
+}
+
+/* grid 선택 */
+.select_pics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 3px;
+}
+
+.select_pics div {
+    width: 225px;
+    height: 40px;
+    text-align: center;
+}
+
+.select_pics img {
+    width: 25px;
+    height: 25px;
+}
+
+.grid {
+    border-bottom: thin black solid;
+}
+
+/* pics */
+.pics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pic img {
+    width: 148px;
+    height: 148px;
+}
+
+/* controller */
+.controller {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.controller img {
+    width: 30px;
+    height: 30px;
+}
