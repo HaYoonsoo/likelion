@@ -1,0 +1,175 @@
+* {
+    font-family: Arial;
+    flex-shrink: 0;
+}
+
+/* 색깔 */
+
+.gray {
+    color: gray;
+}
+
+.red {
+    color: red;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.scroll {
+    overflow: auto;
+}
+.scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* 공용 */
+.box-name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.icons img {
+    width: 48px;
+    height: 48px;
+}
+
+/* 프레임 */
+body {
+    display: flex;
+    justify-content: center;
+}
+.whole {
+    width: 470px;
+    border: thin red solid;
+}
+.main {
+    width: 470px;
+    height: 600px;
+}
+/* 헤더부분 */
+.header {
+    margin: 10px 20px;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+}
+.everytime {
+    font-size: 11px;
+}
+.header-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+.search {
+    margin-left: 200px;
+}
+
+/* 박스들 */
+.schedules {
+    margin-left: 20px;
+    width: 450px;
+    height: 200px;
+}
+.schedule-box {
+    margin-right: 10px;
+    height: 180px;
+    width: 300px;
+    border: thin gray solid;
+    border-radius: 10px;
+}
+.schedule-box-header {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.schedule-box-header .icons {
+    margin-right: 10px;
+}
+
+.schedule-time {
+    color: orange;
+    font-size: 14px;
+}
+
+.schedule-content {
+    margin-left: 78px; 
+    color: gray;
+}
+
+/* 중앙 아이콘들 */
+.buttons {
+    margin-left: 20px;
+    width: 450px;
+    height: 100px;
+}
+
+.button-and-name {
+    margin-right: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+}
+.button-and-name .name {
+    font-size: 13px;
+    color: gray;
+    text-align: center;
+    
+}
+
+/* 광고 */
+.commercial img {
+    margin: 15px 10px;
+    width: 450px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+/* 즐겨찾는 게시판 */
+
+.favorites {
+    margin: 0px 10px;
+    weight: 450px;
+
+    border: thin gray solid;
+    border-radius: 10px;
+}
+
+.favorites-header {
+    margin: 0px 20px;
+    margin-top: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.favorites-main {
+    margin: 10px 20px;
+}
+
+.line {
+    margin: 10px 0px;
+}
+.thread-name {
+}
+
+.thread-example {
+    margin-left: 20px;
+    color: gray;
+    font-size: 15px;
+}
+
+/* 맨 아래 아이콘 */
+.footer {
+    margin: 0px 0px;
+    justify-content: space-between;
+    border-top: solid black thin;
+}
+.footer .icons {
+    margin: 10px 10px;
+}
