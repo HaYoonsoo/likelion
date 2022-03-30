@@ -1,0 +1,84 @@
+
+* {
+    font-family: Arial;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+.all {
+    width: 100%;
+    justify-content: center;
+}
+
+.frame {
+    width: 500px;
+    border: 8px rgb(152, 248, 152) solid;
+}
+
+.input {
+    display: inline-block;
+}
+
+.input textarea {
+    padding: 5px 5px;
+    width: 100%;
+    height: 250px;
+    resize: none;
+    box-sizing: border-box;
+    border: none;
+    font-size: 20px;
+}
+
+.input input {
+    width: 100%;
+    height: 50px;
+    border: none;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    background-color: rgb(152, 248, 152);
+}
+
+.boxes .upper {
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+}
+
+.upper .box {
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wspace {
+    border-right: 4px rgb(152, 248, 152) solid;
+}
+.wospace {
+    border-left: 4px rgb(152, 248, 152) solid;
+}
+
+.boxes .lower {
+    width: 100%;
+    height: 50px;
+    border-top: 8px rgb(152, 248, 152) solid;
+    padding-left: 20%;
+    padding-right: 20%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment, .result {
+    font-size: 20px;
+}
