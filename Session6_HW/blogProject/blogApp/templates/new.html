@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1>글 쓰기 페이지</h1>
+    </div>
+    <form action="{% url 'new' %}" method="post">
+    {% csrf_token %}
+        <div class="main vertical">
+            <div class="content-box">
+                    <div>
+                        <div class="input-disc">글 제목</div>
+                        <input type="text" name="title">
+                    </div>
+                    <div>
+                        <div class="input-disc">카테고리</div>
+                        <input type="text" name="category">
+                    </div>
+                    <div>
+                        <div class="input-disc">글 내용</div>
+                        <textarea name="content" cols="30" rows="10"></textarea>
+                    </div>
+            </div>
+        </div>
+        <div class="footer">
+            <button type="submit">작성 완료</button>
+        </div>
+    </form>
+</body>
+</html>

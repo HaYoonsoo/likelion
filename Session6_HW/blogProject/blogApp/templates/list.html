@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+    <div class="header">
+        <h1>글 전체 목록</h1>
+    </div>
+    <div class="main vertical">
+        <div class="content-box vertical">
+            <ol class="article-list vertical">
+                {% for article in articles %}
+                <li>
+                    <a href="{% url 'detail' article.id %}">{{ article.title }}</a>
+                </li>
+                {% endfor %}
+            </ol>
+        </div>
+        <div class="content-box vertical">
+            <h2>카테고리 리스트</h2>
+            <ul class="category-list vertical">
+                <li>
+                    <div class="category horizontal">
+                        <a href="/category/hobby" class="category">취미</a>
+                        <div class="num_of_articles">({{ article_nums.hobby }})</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="category horizontal">
+                        <a href="/category/programming" class="category">프로그래밍</a>
+                        <div class="num_of_articles">({{ article_nums.programming }})</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="category horizontal">
+                        <a href="/category/food" class="category">음식</a>
+                        <div class="num_of_articles">({{ article_nums.food }})</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="{% url 'new' %}">글 쓰러 가기</a>
+    </div>
+</body>
+</html>
