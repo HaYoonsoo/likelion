@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h1>Todo</h1>
+    <div class="taskboxes">
+        <div class="taskbox newtask">
+            <form action="{% url 'new' %}" method="post">
+                {% csrf_token %}
+                <div>
+                    <input type="text" class="w100" name="title" placeholder="새 할일을 입력해주세요" required>
+                </div>
+                <div>
+                    <textarea name="detail" class="w100" cols="30" rows="10" placeholder="상세정보를 입력해주세요"></textarea>
+                </div>
+                <div>
+                    <input type="date" class="w100" name="date" required>
+                </div>
+                <div>
+                    <button class="w100" type="submit">추가</button>
+                </div>
+            </form>
+        </div>
+        {% for task in tasks %}
+        <div class="taskbox">
+            <form action="{% url 'edit' task.pk %}" method="post">
+                {% csrf_token %}
+                <div>
+                    <input type="text" class="w100" name="title" value="{{ task.title }}" required>
+                </div>
+                <div>
+                    <textarea name="detail" class="w100" cols="30", rows="10">{{ task.detail }}</textarea>
+                </div>
+                <div>
+                    <input type="date" name="date" class="w50" value="{{ task.date_str }}" required>
+                    {% if task.dday < 0 %}
+                    <span class="late w50">
+                        D+{% widthratio task.dday 1 -1 %}
+                    </span>
+                    {% else %}
+                    <span class="w50">
+                        D-{{task.dday}}
+                    </span>
+                    {% endif %}
+                </div>
+                <div>
+                    <button type="submit" class="w50">수정</button>
+                    <a href="{% url 'delete' task.pk %}" class="w50 delete">완료</a>
+                </div>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
