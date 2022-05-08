@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h2>{{major_name}} 과목</h2>
+    <a href="{% url 'home' %}">홈으로</a>
+    <div>
+      <ul>
+        {% for subject in filtered_subjects %}
+        <li> {{subject.subject_name}}
+            <ul>
+                <li>전공명: {{subject.major}}</li>
+                <li>교수명: {{subject.prof_name}}</li>
+                <li>기타사항: {{subject.memo}}</li>
+            </ul>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+* {
+    font-family: Arial;
+}
+
+.add {
+    text-align: right;
+    border: none;
+    box-shadow: none;
+}
+
+h2 {
+    text-align: center;
+}
+
+div {
+  padding-left: 10px;
+    border: thin solid black;
+    border-radius: 5px;
+    box-shadow: 10px 5px 5px gray;
+}
+
+span a {
+    color: red;
+}
