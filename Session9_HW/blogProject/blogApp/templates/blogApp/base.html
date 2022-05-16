@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static './blogApp/styles.css' %}">
+</head>
+<body>
+  <div class="header">
+      <a href="{% url 'listView' %}">
+        <h1>
+          블로그
+        </h1>
+      </a>
+  </div>
+
+  <div class="main">
+    {% block content %}
+    {% endblock %}
+  </div>
+  <div class="footer">
+    <h3>
+      하윤수가 만들었다
+    </h3>
+  </div>
+</body>
+</html>

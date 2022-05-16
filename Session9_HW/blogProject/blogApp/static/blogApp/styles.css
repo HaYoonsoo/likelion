@@ -1,0 +1,59 @@
+* {
+  font-family: Arial;
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  display: inline;
+}
+
+.header {
+  display: fixed;
+  top: 0px;
+  margin: 0 0;
+  width: 100%;
+  background-color: green;
+  text-align: center;
+}
+
+.header a {
+  color: white;
+}
+
+.main {
+  padding: 20px 20px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: green;
+
+  text-align: center;
+  color: white;
+}
+
+
+
+.content-box {
+  padding: 20px 5px;
+  display: flex;
+  justify-content: center;
+}
+
+input, textarea {
+  border: solid green;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+input {
+  width: 80%;
+  height: 1.5rem;
+}
+
+textarea {
+  width: 80%;
+  height: 10rem;
+}

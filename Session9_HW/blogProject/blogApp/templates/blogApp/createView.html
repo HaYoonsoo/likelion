@@ -1,0 +1,22 @@
+{% extends './base.html' %}
+{% block content %}
+
+<div class="content-box">
+  <div>
+    <form method="POST">
+      {% csrf_token %}
+      <input type="text" name="title" /> <br>
+      <textarea name="content"></textarea> <br>
+      <button type="submit">등록</button>
+      <a href="{% url 'listView' %}">
+        <button type="button">
+          취소
+        </button>
+      </a>
+    </form>
+    <div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
