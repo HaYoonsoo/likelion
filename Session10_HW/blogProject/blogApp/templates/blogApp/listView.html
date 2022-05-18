@@ -1,0 +1,33 @@
+{% extends './base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static './blogApp/list_styles.css' %}">
+{% endblock %}
+
+{% block title %}
+전체 글 보기
+{% endblock title %}
+
+{% block content %}
+
+<div class="content-box">
+  <h2>전체 글 조회</h2>
+  <div class="post-list">
+    <div class="post-list-head">
+      <div class="post-count"></div>
+      <div class="post-title">제목</div>
+      <div class="post-view">조회수</div>
+    </div>
+    {% for post in posts %}
+    <div class="post-list-row">
+      <div class="post-count">{{ forloop.counter }}</div>
+      <div class="post-title"><a href="{% url 'detailViewAdd' post.pk %}">{{ post.title }}</a></div>
+      <div class="post-view">{{ post.view }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}
