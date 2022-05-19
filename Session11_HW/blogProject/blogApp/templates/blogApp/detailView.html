@@ -1,0 +1,85 @@
+{% extends './base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static './blogApp/detail-styles.css' %}">
+{% endblock css %}
+
+{% block title %}
+{{ post.title }}
+{% endblock title %}
+
+{% block content %}
+
+<div class="content-box">
+  <div class="detail-header">
+    <div class="post-title">
+      {{ post.title }}
+    </div>
+    <div class="vertical center">
+      <div class="post-author">
+        {{ post.author.username }}
+      </div>
+      <div class="post-view">
+        {{ post.view }}
+      </div>
+    </div>
+  </div>
+  <div class="post-content">
+    <p>
+      {{ post.content|linebreaksbr }}
+    </p>
+  </div>
+
+  <div class="w80">
+    <hr>
+  </div>
+  
+  <div class="comment-list">
+    <ul>
+      {% for comment in post.comment_set.all %}
+      <li>
+        <div class="comment-author">
+          {{ comment.author.username }}
+        </div>
+        <div class="comment-content">
+          {{ comment.content }}
+        </div>
+        {% if user == comment.author %}
+        <div class="comment-delete">
+          <a class="delete-comment" href="{% url 'deleteComment' comment.pk %}">삭제</a>
+        </div>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  
+  <div class="new-comment">
+    <form method="POST">
+      {% csrf_token %}
+      <div class="new-comment-text">
+        <input type="text" name="content" placeholder="댓글을 입력해주세요" />
+      </div>
+      <div class="new-comment-submit">
+        <button type="submit" class="submit">입력</button>
+      </div>
+    </form>
+  </div>
+  
+  <div class="control-bar">
+    <a href="{% url 'listView' %}">
+      홈으로
+    </a>
+    {% if user == post.author %}
+    <a href="{% url 'deleteView' post.pk %}">
+      삭제
+    </a>
+    <a href="{% url 'updateView' post.pk %}">
+      수정
+    </a>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

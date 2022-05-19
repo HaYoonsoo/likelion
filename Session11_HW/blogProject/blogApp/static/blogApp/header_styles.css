@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin-left: 20px;
+}
+
+.header-items {
+  margin-right: 20px;
+  display: flex;
+  justify-content: right;
+}
+
+.header-item {
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

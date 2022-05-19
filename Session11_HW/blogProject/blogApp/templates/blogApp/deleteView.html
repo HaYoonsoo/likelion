@@ -1,0 +1,50 @@
+{% extends './base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static './blogApp/detail-styles.css' %}">
+<link rel="stylesheet" href="{% static './blogApp/delete-styles.css' %}">
+{% endblock css %}
+
+{% block title %}
+삭제
+{% endblock title %}
+
+{% block content %}
+<div class="content-box">
+  <div class="detail-header">
+    <div class="post-title">
+      {{ post.title }}
+    </div>
+    <div class="vertical center">
+      <div class="post-author">
+        {{ post.author.username }}
+      </div>
+      <div class="post-view">
+        {{ post.view }}
+      </div>
+    </div>
+  </div>
+  <div class="post-content">
+    <p>
+      {{ post.content|linebreaksbr }}
+    </p>
+  </div>
+
+  <div class="w80">
+    <hr>
+  </div>
+
+  <div class="control-bar delete-confirm">
+    <h3>삭제하시겠습니까?</h3>
+    <form method="POST">
+      {% csrf_token %}
+      <button type="submit">예</button>
+      <a href="{% url 'detailView' post.pk %}">
+        <button type="button">아니오</button>
+      </a>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

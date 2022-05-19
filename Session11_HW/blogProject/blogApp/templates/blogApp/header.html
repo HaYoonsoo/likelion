@@ -1,0 +1,48 @@
+<div class="header">
+  <div class="title">
+    <a href="{% url 'listView' %}">
+      <h1>블로그</h1>
+    </a>
+  </div>
+  <div class="header-items">
+    <div class="header-item">
+      <a href="{% url 'createView' %}">
+        글쓰기
+      </a>
+    </div>
+    {% if not user.is_authenticated %}
+    <div class="header-item">
+      <a href="{% url 'signupView' %}">
+        회원가입
+      </a>
+    </div>
+    <div class="header-item vertical">
+      <div class="half-sized">
+        <a href="{% url 'loginView' %}">
+          로그인
+        </a>
+      </div>
+      {% load socialaccount %}
+      {% providers_media_js %}
+      <div class="half-sized">
+        <form method="POST" action="{% provider_login_url 'kakao' %}">
+          {% csrf_token %} {{ form.as_p }}
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}">
+          {% endif %}
+          <button type="submit" class="half-sized textbutton">카카오 로그인</button>
+        </form>
+      </div>
+    </div>
+    {% else %}
+    <div class="header-item">
+      {{ user.username }}
+    </div>
+    <div class="header-item">
+      <a href="{% url 'logout' %}">
+        로그아웃
+      </a>
+    </div>
+    {% endif %}
+  </div>
+</div>
