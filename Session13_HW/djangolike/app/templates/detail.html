@@ -1,0 +1,80 @@
+{% extends 'base.html' %} {% block content %}
+<div>
+  <div>
+    <div class="post_title">{{ post.title }}</div>
+    <div class="post_content">{{ post.content }}</div>
+  </div>
+  <a href="{% url 'home' %}">홈으로</a>
+
+  {% if user.is_authenticated and post.author.pk == user.pk %}
+  <a href="{% url 'edit' post.pk %}">수정하기</a>
+  <a href="{% url 'delete' post.pk %}">삭제하기</a>
+  {% endif %} {% for comment in post.comments.all %}
+  <li>{{ comment.content }}</li>
+  {% if user.is_authenticated and comment.author.pk == user.pk %}
+  <a href="{% url 'delete_comment' post.pk comment.pk %}">댓글삭제</a>
+  {% endif %} {% endfor %} {% if user.is_authenticated %}
+  <form method="POST">
+    {% csrf_token %}
+    <input type="text" name="content" placeholder="댓글을 입력하세요" />
+    <button type="submit">댓글 쓰기</button>
+  </form>
+
+  <button id="like-button" onclick="fetchLike(true)">좋아요</button>
+  <button id="scrap-button" onclick="fetchScrap(true)"></button>
+  {% endif %}
+  <div id="like-count"></div>
+  {% if user.pk == post.author.pk %}
+  <div id="scrap-count"></div>
+  {% endif %}
+</div>
+
+<script>
+  const likeCount = document.getElementById('like-count');
+  const likeButton = document.getElementById('like-button')
+  const scrapCount = document.getElementById('scrap-count');
+  const scrapButton = document.getElementById('scrap-button');
+
+  fetchLike(false);
+  fetchScrap(false);
+
+
+  async function fetchLike(edit) {
+    try {
+      const response = await fetch('/like/', {
+        method: "POST",
+        body: JSON.stringify({ post_pk: "{{post.pk}}", edit })
+      });
+      const res = await response.json();
+
+      likeCount.innerHTML = '좋아요' + res.like_count + '개';
+      likeButton.style.color =
+        res.i_like === 1 ? 'red' : 'black';
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  async function fetchScrap(edit) {
+    try {
+      const response = await fetch('/scrap/', {
+        method: "POST",
+        body: JSON.stringify({ post_pk: "{{post.pk}}", edit })
+      });
+      const res = await response.json();
+
+      scrapButton.innerHTML =
+        res.i_scrap === 1 ? '스크랩됨' : '스크랩하기';
+      if (scrapCount !== null) {
+        scrapCount.innerHTML =
+          '스크랩' + res.scrap_count + '개';
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+
+</script>
+
+{% endblock content %}
